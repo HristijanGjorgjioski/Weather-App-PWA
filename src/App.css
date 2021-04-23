@@ -1,13 +1,13 @@
 html, body, #root {
     font: 0.9rem sans-serif;
-    background: #0a1f44;
+    /* background: url('https://images.unsplash.com/photo-1561583534-09e822ba83ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1012'); */
     color: #1e2432;
     height: 100%;
     margin: 0;
 }
 
 .main-container {
-    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.418) ), url('https://hdwallpaper20.com/wp-content/uploads/2017/07/wallpaper-wp4001752.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.418) ), url('https://images.unsplash.com/photo-1561583534-09e822ba83ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1012');
     background-size: cover;
     background-position: center;
 }
