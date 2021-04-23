@@ -15,9 +15,27 @@ self.addEventListener('install', (e) => {
 })
 
 self.addEventListener('fetch', (e) => {
-
+    e.respondWith(
+        caches.match(e.request)
+            .then(() => {
+                return fetch(e.request)
+                    .catch((err) => caches.match('offline.html'))
+            })
+    )
 })
 
 self.addEventListener('activate', (e) => {
+    const cacheWhiteList = [];
+    cacheWhiteList.push(CACHE_NAME);
 
+    e.waitUntil(
+        caches.keys()
+            .then((cacheNames) => Promise.all(
+                cacheNames.map((cacheName) => {
+                    if(!cacheWhiteList.includes(cacheName)) {
+                        return caches.delete(cacheName);
+                    }
+                })
+            ))
+    )
 })
